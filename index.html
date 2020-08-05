@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>InstaCleaner</title>
+  <link rel="shortcut icon" href="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Instagram_logo_2016.svg/768px-Instagram_logo_2016.svg.png" type="image/x-icon">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h3>Как использовать скрипт?</h3>
+    <div class="instructions">
+      <p>1. Перейти по <a href="https://www.instagram.com/accounts/access_tool/current_follow_requests" target="_blank">ссылке</a></p>
+      <p>2. Развернуть список логинов до конца, скопировать его</p>
+      <p>3. Вставить список в поле ниже</p>
+      <p class="hint">Разрешите всплывающие окна в вашем браузере</p>
+    </div>
+    <textarea rows="25" cols="35" id="textarea_logins" class="textarea"></textarea>
+    <br>
+    <input type="radio" name="open" id="radio1" onclick="disableSelectList()" checked>
+    <label for="radio1">Открыть всех пользователей</label>
+    <br>
+    <input type="radio" name="open" id="radio2" onclick="enableSelectList()">
+    <label for="radio2">Открывать по
+    <select id="users_amount">
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="5">5</option>
+      <option value="10">10</option>
+    </select> пользователей</label>
+    <br>
+    <input type="radio" name="open" id="radio3" onclick="disableSelectList()">
+    <label for="radio3">Получить только ссылки</label>
+    <br>
+    <input type="button" value="Старт" onclick="startScript()" id="start_button" class="start-button">
+    <ul id="links_list" class="links-list"></ul>
+  </div>
+  <div class="watermark">
+    <p>by <a href="https://github.com/avastium" target="_blank">Avastium</a></p>
+  </div>
+  <script src="script.js" type="text/javascript"></script>
+</body>
+</html>
